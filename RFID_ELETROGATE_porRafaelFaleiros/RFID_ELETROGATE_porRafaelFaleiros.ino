@@ -6,6 +6,8 @@
 
 #define EEPROM_SIZE 1000 // Escolha o tamanho da EEPROM que deseja usar
 
+#define trava 8 // define pino para trava solenoide da porta
+
 // Define os pinos para a conexão ao display LCD
 LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
 
@@ -32,6 +34,8 @@ void setup() {
   SPI.begin();
   mfrc522.PCD_Init();
 
+   pinMode(trava, OUTPUT);// define como saida
+  
   // Verifica se a EEPROM está limpa ou contém dados
   if (isEEPROMCleared()) {
     // Se limpa, exibe mensagem e imprime no monitor serial
