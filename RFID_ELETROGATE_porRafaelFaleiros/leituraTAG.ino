@@ -13,6 +13,10 @@ void leituraTAG() {
       escreve("TAG cadastrada", 0, 0, 1); // Exibe "TAG cadastrada" no LCD
       escreve(rfidTag, 0, 1, 0); // Exibe o conteúdo da tag RFID no LCD
       Serial.println("Tag RFID cadastrada.");
+    // aciona a trava por 3seg
+      digitalWrite(trava,HIGH);
+      delay(3000);
+      digitalWrite(trava,LOW);
     } else {
       escreve("TAG incorreta", 0, 0, 1); // Exibe "TAG incorreta" no LCD
       escreve(rfidTag, 0, 1, 0); // Exibe o conteúdo da tag RFID no LCD
