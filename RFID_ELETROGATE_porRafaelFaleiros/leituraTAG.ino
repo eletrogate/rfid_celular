@@ -2,7 +2,6 @@
 void leituraTAG() {
    escreve("Aproxime a TAG", 0, 0, 1); // Exibe "TAG cadastrada" no LCD
    escreve("do leitor", 0, 1, 0); // Exibe "TAG cadastrada" no LCD
-   digitalWrite(ledAzul,HIGH);
   // Verifica se uma tag RFID está presente no leitor
   if (mfrc522.PICC_IsNewCardPresent() && mfrc522.PICC_ReadCardSerial()) {
     // Lê a tag RFID e a armazena em uma string
