@@ -28,9 +28,12 @@ MFRC522 mfrc522(SDA_PIN, RST_PIN);  // Criação de uma instância do MFRC522
 int incomingByte;
 
 void setup() {
-  pinMode(ledAzul,INPUT_PULLUP);
-  pinMode(ledVerde,INPUT_PULLUP);
-  pinMode(ledVermelho,INPUT_PULLUP);
+
+  //Define os pinos do LED RGB e do módulo relé como saida.
+  pinMode(ledAzul,OUTPUT);
+  pinMode(ledVerde,OUTPUT);
+  pinMode(ledVermelho,OUTPUT);
+  pinMode(trava, OUTPUT);
   
   // Inicialização do LCD
   lcd.begin(16, 2);
@@ -40,8 +43,6 @@ void setup() {
   bluetoothSerial.begin(9600);
   SPI.begin();
   mfrc522.PCD_Init();
-
-   pinMode(trava, OUTPUT);// define como saida
   
   // Verifica se a EEPROM está limpa ou contém dados
   if (isEEPROMCleared()) {
