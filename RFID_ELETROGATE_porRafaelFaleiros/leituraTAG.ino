@@ -20,7 +20,7 @@ void leituraTAG() {
       Serial.println("Tag RFID lida: " + rfidTag); // Imprime a tag RFID no monitor serial 
     // aciona a trava por 3seg
      digitalWrite(trava,LOW);
-     digitalWrite(ledVerde,HIGH);
+     digitalWrite(ledVerde,HIGH);
      delay(3000);
      digitalWrite(trava,HIGH);
      digitalWrite(ledVerde,LOW);
