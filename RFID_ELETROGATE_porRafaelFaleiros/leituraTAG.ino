@@ -13,20 +13,22 @@ void leituraTAG() {
       escreve("TAG cadastrada", 0, 0, 1); // Exibe "TAG cadastrada" no LCD
       escreve(rfidTag, 0, 1, 0); // Exibe o conteúdo da tag RFID no LCD
       Serial.println("Tag RFID cadastrada.");
+      Serial.println("Tag RFID lida: " + rfidTag); // Imprime a tag RFID no monitor serial 
     // aciona a trava por 3seg
-      digitalWrite(trava,LOW);
-      delay(3000);
-      digitalWrite(trava,HIGH);
+     digitalWrite(trava,LOW);
+     digitalWrite(ledVerde,HIGH);
+     delay(3000);
+     digitalWrite(trava,HIGH);
+     digitalWrite(ledVerde,LOW);
     } else {
       escreve("TAG incorreta", 0, 0, 1); // Exibe "TAG incorreta" no LCD
       escreve(rfidTag, 0, 1, 0); // Exibe o conteúdo da tag RFID no LCD
       Serial.println("Tag RFID não cadastrada.");
+      Serial.println("Tag RFID lida: " + rfidTag); // Imprime a tag RFID no monitor serial 
+      digitalWrite(ledVermelho, HIGH);
+      delay(3000);
+      digitalWrite(ledVermelho, LOW);
     }
-
-    // Imprime a tag RFID no monitor serial e no LCD
-    Serial.println("Tag RFID lida: " + rfidTag);
-
-
     // Aguarda um momento para evitar leituras múltiplas da mesma tag
     delay(1000);
   }
