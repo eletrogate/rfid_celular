@@ -58,6 +58,8 @@ void setup() {
 }
 
 void loop() {
+  digitalWrite(trava,HIGH);
+  digitalWrite(ledAzul,HIGH);
   leituraTAG(); // Função para ler as tags RFID
   bluetooth(); // Função para lidar com a comunicação Bluetooth
 }
