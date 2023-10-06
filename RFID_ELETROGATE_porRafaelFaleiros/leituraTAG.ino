@@ -8,7 +8,6 @@ void leituraTAG() {
     String rfidTag = "";
     for (byte i = 0; i < mfrc522.uid.size; i++) {
       rfidTag += String(mfrc522.uid.uidByte[i], HEX);
-      digitalWrite(ledAzul,LOW);
     }
 
     // Verifica se a tag lida está cadastrada na EEPROM
@@ -18,6 +17,7 @@ void leituraTAG() {
       Serial.println("Tag RFID cadastrada.");
       Serial.println("Tag RFID lida: " + rfidTag); // Imprime a tag RFID no monitor serial 
     // aciona a trava por 3seg
+     digitalWrite(ledAzul,LOW);
      digitalWrite(trava,LOW);
      digitalWrite(ledVerde,HIGH);
      delay(3000);
@@ -28,6 +28,7 @@ void leituraTAG() {
       escreve(rfidTag, 0, 1, 0); // Exibe o conteúdo da tag RFID no LCD
       Serial.println("Tag RFID não cadastrada.");
       Serial.println("Tag RFID lida: " + rfidTag); // Imprime a tag RFID no monitor serial 
+      digitalWrite(ledAzul,LOW);
       digitalWrite(ledVermelho, HIGH);
       delay(3000);
       digitalWrite(ledVermelho, LOW);
