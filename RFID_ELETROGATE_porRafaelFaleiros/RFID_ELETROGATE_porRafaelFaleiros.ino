@@ -8,7 +8,7 @@
 
 #define trava 8 // define pino para trava solenoide da porta
 #define ledVerde A5 // define o pino em que está conectado o terminal referente a cor verde do LED RGB
-#define ledVermelho A6 // define o pino em que está conectado o terminal referente a cor vermelha do LED RGB
+#define ledVermelho A1 // define o pino em que está conectado o terminal referente a cor vermelha do LED RGB
 #define ledAzul A2 // define o pino em que está conectado o terminal referente a cor verde do LED RGB
 
 // Define os pinos para a conexão ao display LCD
