@@ -12,7 +12,7 @@
 #define ledAzul A2 // define o pino em que está conectado o terminal referente a cor verde do LED RGB
 
 // Define os pinos para a conexão ao display LCD
-LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+LiquidCrystal lcd(2,3,4,5,6,7);
 
 // Define os pinos RX e TX para o módulo HC-05
 const int bluetoothRxPin = 9;  // Conecte o TX do HC-05 ao pino 9 do Arduino
